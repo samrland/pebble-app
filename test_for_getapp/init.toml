@@ -1,0 +1,15 @@
+# init.toml is used an the information file for the application.
+
+[AboutApp]
+name = "test_for_getapp"
+author = {
+    github = "samrpf"
+    email = "samrpf@outlook.com"
+}
+
+[DevInfo]
+type = "luaapp"
+init = "init.lua"
+
+# Currently, you don't actually need to have an init.toml file, as it isn't used for anything.
+# But I am planning to use the information in here in some kind of way for the future.

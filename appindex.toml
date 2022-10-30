@@ -1,0 +1,14 @@
+# App index for pebble
+
+# DO NOT CHANGE THIS YOURSELF.
+# Don't change the revision number on your own; I'll do that.
+revision = 1
+
+# Best apps
+# This is for apps that should be highlighted for some reason or another.
+pl = ["test_for_getapp"]
+
+# Available apps
+# Add your app here, along with the version number.
+[AvailableApps]
+test_for_getapp = "v0.1.0"

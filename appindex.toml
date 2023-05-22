@@ -14,5 +14,5 @@ highlighted = [ "basicapp" ]
 [AvailableApps]
 
 [AvailableApps.basicapp]
-path = "./basicapp/init.toml"
+path = "basicapp/init.toml"
 description = "A simple basic app to test out getapp."

@@ -2,10 +2,8 @@
 
 [AboutApp]
 name = "basicapp"               # the name of the package
-author = {                      # author information
-    github = "samrland"
-    email = "samr.stuff@pm.me"
-}
+author = { github = "samrland"; email = "samr.stuff@pm.me" }
+                                # author information
 
 [DevInfo]
 type = "luaapp"                  # type of app (currently not used, but may be used later)

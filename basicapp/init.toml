@@ -2,7 +2,7 @@
 
 [AboutApp]
 name = "basicapp"               # the name of the package
-author = { github = "samrland"; email = "samr.stuff@pm.me" }
+author = { github = "samrland", email = "samr.stuff@pm.me" }
                                 # author information
 
 [DevInfo]

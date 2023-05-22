@@ -6,9 +6,13 @@ revision = 1
 
 # Best apps
 # This is for apps that should be highlighted for some reason or another.
-hlp = ["test_for_getapp"]
+# May include useful first-install packages.
+highlighted = [ "basicapp" ]
 
 # Available apps
 # Add your app here, along with the version number.
 [AvailableApps]
-test_for_getapp = "v0.1.0"
+
+[AvailableApps.basicapp]
+path = "./basicapp/init.toml"
+description = "A simple basic app to test out getapp."

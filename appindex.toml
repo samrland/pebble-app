@@ -14,3 +14,4 @@ highlighted = [ "basicapp" ]
 [AvailableApps]
 
 basicapp = { description = "A simple basic app to test out getapp.", authorinfo = "samrland" }
+# basicappalias = { alias = "basicapp" }

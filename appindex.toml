@@ -16,3 +16,4 @@ highlighted = [ "basicapp" ]
 [AvailableApps.basicapp]
 path = "basicapp/init.toml"
 description = "A simple basic app to test out getapp."
+authorinfo = "samrland"

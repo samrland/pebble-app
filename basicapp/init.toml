@@ -1,0 +1,13 @@
+# init.toml is used an the information file for the application.
+
+[AboutApp]
+name = "basicapp"               # the name of the package
+author = {                      # author information
+    github = "samrland"
+    email = "samr.stuff@pm.me"
+}
+
+[DevInfo]
+type = "luaapp"                  # type of app (currently not used, but may be used later)
+requirements = [ "init.lua" ]    # required files
+init = "init.lua"                # init script/executable

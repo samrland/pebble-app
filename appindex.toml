@@ -13,7 +13,4 @@ highlighted = [ "basicapp" ]
 # Add your app here, along with the version number.
 [AvailableApps]
 
-[AvailableApps.basicapp]
-path = "init.toml"
-description = "A simple basic app to test out getapp."
-authorinfo = "samrland"
+basicapp = { description = "A simple basic app to test out getapp.", authorinfo = "samrland" }

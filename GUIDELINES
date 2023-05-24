@@ -1,0 +1,76 @@
+# Repository Guidelines
+
+Welcome to the main pebble application repository.
+This is a place where most, if not all (well, currently most definitely all), of the applications available for pebble are stored.
+Thank you for wanting to participate in the pebble ecosystem.
+
+## Adding apps
+
+Steps to adding your own app to the repository:
+
+1. Open a pull request with the app name
+2. Create your app (see the "App format" section)
+3. Add the app to appindex.toml under `AvailableApps`. Do not change the revision number or the highlighted section yourself.
+4. Wait for your pull request to get merged.
+5. Celebrate!
+
+## App format
+
+This should really be a part of the main pebble code rather than part of this, but nevermind.
+
+Note that these aren't just guidelines, but are required by pebble to understand the app.
+
+You are required to have a single file called `init.toml`, which contains all of the information for the app.
+
+```toml
+specver = 2 # the spec version. this increases everytime a breaking change is made to this spec format, such as making a new required field.
+
+[AboutApp] # The public information section, basically the showcase.
+name = "MyCoolApp" # the name of the package.
+author = { website = "john.example.com", email = "john@john.example.com", github = "ghost" } # author information
+
+[Spec] # information for pebble to understand how to use and run the app.
+type = "luaapp" # just "luaapp". a real reason for this to exist might come to be in the future, but right now it's just a measure to prevent versioning issues.
+requirements = [ "init.lua" ] # all the files in the repository that need to be downloaded for use. used by getapp to know where the location for all of the files for the app are
+init = "init.lua" # init script. the name can be different, but init.lua is a pretty good standard.
+```
+
+In your init script, you should require PKit, and use `PKit.home()` when exiting the application.
+
+```lua
+-- MyCoolApp by john <john@john.example.com>
+PKit = require "PKit"
+
+-- ...
+
+PKit.home()
+```
+
+## What is `appindex.toml`?
+
+This magical file at the top-level of every app repository explains to getapp and other services how the repository is configured and where to get the apps from.
+Here are what the different things here mean:
+
+- `revision`: Explains to getapp what revision the appindex is on. This is used for refreshing app indices, and is just a general versioning number for the repository. It's updated every time any change is made to the repository as to make sure every user gets the latest update for everything.
+- `highlighted`: A list of apps that should be highlighted for one reason or another. This may include good first-install apps or other recommended tools.
+- `AvailableApps`: The section that actually matters to you, the developer. This is where entries for apps in the repository go. The key for the entry is the name for the app, and should be the same as the directory the app is configured in. It will be an inline table with the following entries:
+  - `description` is just a description used for the app. Used in searches, and is shown to the user on install to make sure that they are installing the right app.
+  - `authorinfo`: Just a basic piece of information about the author of the app; doesn't have to be as thorough as the AboutApp.author entry in init.toml, just a piece of information that is again, used to confirm with the user that they are installing the right app. Can just be a username or email address.
+
+## Le rules
+
+There are a few rules on contributing apps to this repository.
+Please don't break these guidelines, otherwise we won't be able to accept your pull request.
+Until this page is fully done, here is a list of things to do:
+
+- Don't modify anything in the top-level, such as configuration files or such
+  - Set configuration files for your specific directory, not the entire repository
+- 1 pull request == 1 app. Do not try to multiple apps in a single pull request; rather, make different PRs.
+- Don't edit others' specs or appindex.toml entries on your own. If there is an error you would like to fix, contact them and allow them to make their own pull request to update it. If the entry is your own, remember that there should only one app added or modified for each pull request.
+- Don't change the revision number of the highlighted section in appindex.toml yourself. It should be obvious why.
+
+## Conclusion
+
+Please follow these guidelines if you are making an app.
+If you don't want to, you are always welcome to make your own repository or contribute to a different one.
+The point of open source is to be free, so please help keep it that way.

@@ -1,11 +1,13 @@
 # init.toml is used an the information file for the application.
 
+specver = 2                     # the spec format version. this increases every time a breaking change is made to the format, such as making a new required field.
+
 [AboutApp]
 name = "basicapp"               # the name of the package
 author = { github = "samrland", email = "samr.stuff@pm.me" }
                                 # author information
 
-[DevInfo]
+[Spec]
 type = "luaapp"                  # type of app (currently not used, but may be used later)
 requirements = [ "init.lua" ]    # required files
 init = "init.lua"                # init script/executable
